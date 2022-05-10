@@ -1,0 +1,24 @@
+Requirements
+
+========================
+1) Login / Sing up page(admin, user)
+
+2) Home Page
+
+
+3) MyAccount Page
+
+4) Request book page
+
+5) book report page
+
+
+*Book class
+
+A book has an name, author , branch, price
+
+
+
+*Book issue report
+
+Name of customer, book name , issue date, return date, fine, return ehi
