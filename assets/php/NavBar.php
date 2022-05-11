@@ -8,12 +8,16 @@
     <title>Document</title>
 
     <style>
+          *{
+            font-family: 'Roboto', sans-serif;
+        }
         nav{
             padding: 1%;
-           
+            background-color: #d6d3d3;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: row;
+            height: 50px;
             align-items: flex-start;
             justify-content:space-between;
 
@@ -36,38 +40,83 @@
         }
 
         nav .user-nav-elements{
-            border: 2px solid rebeccapurple;
+        
+          
             display: flex;
-            flex-direction: row;
-            width: 10%;
-            align-items:flex-start;
+            flex-direction: column;
+
+            align-items:center;
             justify-content: space-between;
             
             
         }
-
-        nav .user-nav-elements .user-svg{
-            border: 2px solid rebeccapurple;
+        nav .user-nav-elements .svg-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 110%;
+            justify-content: space-between;
+        }
+        nav .user-nav-elements .svg-container .user-svg{
+         
+            width: 50px;
+            height: 50px;
+        }
+        nav .user-nav-elements .svg-container .down-arrow{
+           border-radius: 20px;
+         
+            
+           cursor: pointer;
             width: 35px;
             height: 35px;
         }
+        
 
+      
        
 
-        nav .user-nav-elements .drop-down{
-            border: 2px solid rebeccapurple;
-            padding-top: 5%;
-            height: 20%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        nav .user-nav-elements .svg-container .down-arrow:hover{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav .user-nav-elements  .user-drop-down-list{
+           margin-top: 20%;
+           margin-right: 20%;
+            
+            
+            list-style: none;
+           /* border:  1px solid blue;*/
+            width: 110%;
+            text-align: center;
+            
+
+
+            
         }
 
-        nav .user-nav-elements .drop-down .drop-down-arrow{
-             width: 26px;
-             height: 26px;
+        nav .user-nav-elements .user-drop-down-list .user-drop-down-list-element{
+            padding: 2%;
+            margin: 2%;
+            border: 1px solid gray;
+            border-radius: 25px;
+            cursor: pointer;
+            -webkit-transition:   background-color 0.2s ease-out;
+            -webkit-transition:   color 0.2s ease-out;
+           
         }
+
+        nav .user-nav-elements  .user-drop-down-list .user-drop-down-list-element:hover{
+            background-color: #59595B;
+            color: white;
+        }
+
+        .hidden{
+            opacity: 0;
+        }
+
+        .show{
+            opacity: 1;
+        }
+     
     </style>
 </head>
 
@@ -76,7 +125,7 @@
 <body>
     <nav>
         <div class="logo">
-            <svg class="books-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 460 460" style="enable-background:new 0 0 460 460;" xml:space="preserve" width="512" height="512">
+            <svg class="books-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 460 460" style="enable-background:new 0 0 460 460;" xml:space="preserve" >
                 <g id="XMLID_244_">
                     <path id="XMLID_227_" style="fill:#59595B;" d="M460,300v20c0,16.569-13.431,30-30,30h-10c5.523,0,10,4.477,10,10v70   c0,5.523-4.477,10-10,10H40c-5.523,0-10-4.477-10-10v-70c0-5.523,4.477-10,10-10h70c-5.523,0-10-4.477-10-10   c0-5.523,4.477-10,10-10h10v-40h-10c-5.523,0-10-4.477-10-10c0-5.523,4.477-10,10-10H30c-16.569,0-30-13.431-30-30v-40   c0-16.569,13.431-30,30-30h120v-70H30C13.431,100,0,86.569,0,70V50c0-16.569,13.431-30,30-30h290h10h20c5.523,0,10,4.477,10,10   c0,5.523-4.477,10-10,10h-10v40h10c5.523,0,10,4.477,10,10c0,5.523-4.477,10-10,10h20v70h-20c5.523,0,10,4.477,10,10   c0,5.523-4.477,10-10,10v60c5.523,0,10,4.477,10,10c0,5.523-4.477,10-10,10h80C446.569,270,460,283.431,460,300z"/>
                     <path id="XMLID_243_" style="fill:#C18F2B;" d="M120,440H90v-90h30V440z M370,350h-30v90h30V350z"/>
@@ -95,59 +144,65 @@
             </svg>
             <h1>LMS</h1></div>
         <div class="user-nav-elements">
-            <svg class="user-svg" widtg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
-                <g>
+            <div class="svg-container">
+                <svg class="user-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
                     <g>
-                        <path d="M417.4,71.6C371.2,25.4,309.8,0,244.5,0S117.8,25.4,71.6,71.6S0,179.2,0,244.5s25.4,126.7,71.6,172.9S179.2,489,244.5,489
-                        s126.7-25.4,172.9-71.6S489,309.8,489,244.5S463.6,117.8,417.4,71.6z M244.5,462C124.6,462,27,364.4,27,244.5S124.6,27,244.5,27
-                        S462,124.6,462,244.5S364.4,462,244.5,462z" />
-                        <path d="M244.5,203.2c35.1,0,63.6-28.6,63.6-63.6s-28.5-63.7-63.6-63.7s-63.6,28.6-63.6,63.6S209.4,203.2,244.5,203.2z
-                         M244.5,102.9c20.2,0,36.6,16.4,36.6,36.6s-16.4,36.6-36.6,36.6s-36.6-16.4-36.6-36.6S224.3,102.9,244.5,102.9z" />
-                        <path d="M340.9,280.5c-22.3-32.8-54.7-49.5-96.4-49.5s-74.1,16.6-96.4,49.5c-16.6,24.4-27.2,57.7-31.4,98.7
-                        c-0.8,7.4,4.6,14.1,12,14.8c7.4,0.8,14.1-4.6,14.8-12c8.5-82.3,42.5-124,101-124s92.5,41.7,101,124c0.7,6.9,6.6,12.1,13.4,12.1
-                        c0.5,0,0.9,0,1.4-0.1c7.4-0.8,12.8-7.4,12-14.8C368.1,338.1,357.5,304.9,340.9,280.5z" />
+                        <g>
+                            <path d="M417.4,71.6C371.2,25.4,309.8,0,244.5,0S117.8,25.4,71.6,71.6S0,179.2,0,244.5s25.4,126.7,71.6,172.9S179.2,489,244.5,489
+                            s126.7-25.4,172.9-71.6S489,309.8,489,244.5S463.6,117.8,417.4,71.6z M244.5,462C124.6,462,27,364.4,27,244.5S124.6,27,244.5,27
+                            S462,124.6,462,244.5S364.4,462,244.5,462z" />
+                            <path d="M244.5,203.2c35.1,0,63.6-28.6,63.6-63.6s-28.5-63.7-63.6-63.7s-63.6,28.6-63.6,63.6S209.4,203.2,244.5,203.2z
+                             M244.5,102.9c20.2,0,36.6,16.4,36.6,36.6s-16.4,36.6-36.6,36.6s-36.6-16.4-36.6-36.6S224.3,102.9,244.5,102.9z" />
+                            <path d="M340.9,280.5c-22.3-32.8-54.7-49.5-96.4-49.5s-74.1,16.6-96.4,49.5c-16.6,24.4-27.2,57.7-31.4,98.7
+                            c-0.8,7.4,4.6,14.1,12,14.8c7.4,0.8,14.1-4.6,14.8-12c8.5-82.3,42.5-124,101-124s92.5,41.7,101,124c0.7,6.9,6.6,12.1,13.4,12.1
+                            c0.5,0,0.9,0,1.4-0.1c7.4-0.8,12.8-7.4,12-14.8C368.1,338.1,357.5,304.9,340.9,280.5z" />
+                        </g>
                     </g>
-                </g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-            </svg>
-            <div class="drop-down">
-            
-                   <svg class="down-arrow" id="SvgjsSvg1001" xmlns="http://www.w3.org/2000/svg" version="1.1"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs">
-                    <defs id="SvgjsDefs1002"></defs>
-                    <g id="SvgjsG1008"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20.633 20.633"
-                            viewBox="0 0 20.633 20.633" width="16" height="16">
-                            <path d="M10.79,15.617l9.648-9.646c0.133-0.131,0.195-0.301,0.195-0.473s-0.062-0.344-0.195-0.473l-0.012-0.012
-                             c-0.125-0.127-0.295-0.195-0.472-0.195h-4.682c-0.18,0-0.348,0.068-0.473,0.195l-4.48,4.479l-4.48-4.479
-                             C5.711,4.886,5.54,4.818,5.366,4.818H0.684c-0.182,0-0.349,0.068-0.475,0.195L0.196,5.025C0.068,5.148,0,5.322,0,5.498
-                             c0,0.176,0.068,0.348,0.196,0.473l9.648,9.646C10.108,15.88,10.53,15.88,10.79,15.617z" fill="#7dcc3d"
-                                class="color000 svgShape"></path>
-                        </svg></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
                 </svg>
-              
-                <ul class="user-drop-down-list">
-                    <li>settings</li>
-                    <li>log out</li>
-                </ul>
+                <svg class="down-arrow" id="SvgjsSvg1001" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs">
+                <defs id="SvgjsDefs1002"></defs>
+                <g  id="SvgjsG1008"><svg  xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20.633 20.633"
+                        viewBox="0 0 20.633 20.633" >
+                        <path d="M10.79,15.617l9.648-9.646c0.133-0.131,0.195-0.301,0.195-0.473s-0.062-0.344-0.195-0.473l-0.012-0.012
+                         c-0.125-0.127-0.295-0.195-0.472-0.195h-4.682c-0.18,0-0.348,0.068-0.473,0.195l-4.48,4.479l-4.48-4.479
+                         C5.711,4.886,5.54,4.818,5.366,4.818H0.684c-0.182,0-0.349,0.068-0.475,0.195L0.196,5.025C0.068,5.148,0,5.322,0,5.498
+                         c0,0.176,0.068,0.348,0.196,0.473l9.648,9.646C10.108,15.88,10.53,15.88,10.79,15.617z" fill="#7dcc3d"
+                            class="color000 svgShape"></path>
+                    </svg></g>
+            </svg>
             </div>
+     
+          
+            
+                
+              
+                <ul class="user-drop-down-list hidden">
+                    <li class="user-drop-down-list-element">settings</li>
+                    <li class="user-drop-down-list-element">log out</li>
+                </ul>
+       
         </div>
 
 
     </nav>
+
+    <script src="../../assets/js/user-sub-menu.js"></script>
 </body>
 
 </html>
